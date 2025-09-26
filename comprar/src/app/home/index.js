@@ -1,5 +1,12 @@
 import { useEffect, useState } from 'react'
-import { Alert, FlatList, Image, TouchableOpacity, View } from 'react-native'
+import {
+	Alert,
+	FlatList,
+	Image,
+	Text,
+	TouchableOpacity,
+	View,
+} from 'react-native'
 import { Button } from '../../components/button'
 import { Filter } from '../../components/filter'
 import { Input } from '../../components/input'
@@ -16,6 +23,7 @@ export function Home() {
 	const [items, setItems] = useState([])
 
 	async function handleAdd() {
+		console.log('Adicionando item...')
 		if (!description.trim()) {
 			return Alert.alert('Adicionar', 'Informe a descrição para adicionar')
 		}
@@ -89,7 +97,7 @@ export function Home() {
 
 	useEffect(() => {
 		itemsByStatus()
-	}, [filter])
+	}, [itemsByStatus])
 
 	return (
 		<View style={styles.container}>
@@ -132,6 +140,7 @@ export function Home() {
 					)}
 					showsVerticalScrollIndicator={false}
 					ItemSeparatorComponent={() => <View style={styles.separator} />}
+					contentContainerStyle={styles.listContent}
 					ListEmptyComponent={() => (
 						<Text style={styles.empty}>Nenhum item aqui.</Text>
 					)}

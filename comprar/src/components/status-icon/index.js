@@ -1,10 +1,10 @@
-import { CheckCircleIcon, CircleDashedIcon } from 'phosphor-react-native'
+import { CircleCheck, CircleDashed } from 'lucide-react-native'
 import { FilterStatus } from '../../types/filter-status'
 
-export function StatusIcon({ status }) {
+export function StatusIcon({ status, color }) {
 	return status === FilterStatus.DONE ? (
-		<CheckCircleIcon size={18} />
+		<CircleDashed size={18} color={color} />
 	) : (
-		<CircleDashedIcon size={18} />
+		<CircleCheck size={18} color={color} />
 	)
 }

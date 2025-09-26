@@ -50,6 +50,10 @@ export const styles = StyleSheet.create({
 		backgroundColor: colors.border.primary,
 		marginVertical: 16,
 	},
+	listContent: {
+		paddingTop: 16,
+		paddingBottom: 62,
+	},
 	empty: {
 		fontSize: 14,
 		textAlign: 'center',

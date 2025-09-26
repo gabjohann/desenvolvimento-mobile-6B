@@ -1,5 +1,5 @@
-import { TrashIcon } from 'phosphor-react-native'
-import { TouchableOpacity, View } from 'react-native'
+import { Trash2 } from 'lucide-react-native'
+import { Text, TouchableOpacity, View } from 'react-native'
 import { colors } from '../../styles/colors'
 import { StatusIcon } from '../status-icon'
 import { styles } from './styles'
@@ -14,7 +14,7 @@ export function Item({ data, onStatus, onRemove }) {
 			<Text style={styles.description}>{data.description}</Text>
 
 			<TouchableOpacity onPress={onRemove}>
-				<TrashIcon size={18} color={colors.text.muted} />
+				<Trash2 size={18} color={colors.text.muted} />
 			</TouchableOpacity>
 		</View>
 	)
